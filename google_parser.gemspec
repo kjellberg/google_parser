@@ -16,8 +16,8 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.6.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/rankzon/google_parser"
-  spec.metadata["changelog_uri"] = "https://github.com/rankzon/google_parser/blob/master/CHANGELOG.md"
+  spec.metadata["source_code_uri"] = "https://github.com/kjellberg/google_parser"
+  spec.metadata["changelog_uri"] = "https://github.com/kjellberg/google_parser/blob/master/CHANGELOG.md"
 
   spec.files = Dir["lib/**/*", "MIT-LICENSE", "README.md"]
   spec.require_paths = ["lib"]

@@ -39,14 +39,23 @@ module GoogleParser
       def parse_organic_results
         result_elements = @doc.css(selectors.dig(:organic_results, :container))
         @organic_results = result_elements.map do |result_element|
+          url = parse_google_url(result_element.css(selectors.dig(:organic_results, :url)))
+          domain = extract_domain(url)
+          root_domain = domain.gsub("www.", "")
           {
             position: result_elements.index(result_element) + 1,
             title: result_element.css(selectors.dig(:organic_results, :title)).text&.strip,
             description: result_element.css(selectors.dig(:organic_results, :description)).text&.strip,
             breadcrumbs: result_element.css(selectors.dig(:organic_results, :breadcrumbs)).text&.strip,
-            url: parse_google_url(result_element.css(selectors.dig(:organic_results, :url))),
+            url: url,
+            domain: domain,
+            root_domain: root_domain
           }
         end
+      end
+
+      def extract_domain(url)
+        URI.parse(url).host
       end
 
       def parse_google_url(full_google_uri)

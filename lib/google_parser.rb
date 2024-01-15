@@ -14,7 +14,7 @@ module GoogleParser
       @raw_html = raw_html
       @doc = Nokogiri::HTML(raw_html)
       @organic_results = []
-      @jsmodel = @doc.css("body").attr("jsmodel").value
+      @jsmodel = @doc.css("body").attr("jsmodel").value&.strip!
 
       parse_organic_results
     rescue StandardError => e

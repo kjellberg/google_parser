@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    google_parser (0.1.0)
+    google_parser (0.1.1)
       nokogiri (~> 1.15.3)
 
 GEM

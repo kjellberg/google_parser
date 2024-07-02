@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GoogleParser
   class OrganicResult
     attr_accessor :position, :title, :description, :breadcrumbs, :url, :domain, :root_domain

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module GoogleParser
   class AdResult
     attr_accessor :title, :description, :breadcrumbs, :url, :domain, :root_domain, :ad_label

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "nokogiri"
 require "uri"
 
@@ -26,7 +28,7 @@ module GoogleParser
         result_elements.map.with_index(1) do |result_element, index|
           url = parse_google_url(result_element.css(@selectors.dig(:organic_results, :url)))
           domain = extract_domain(url)
-          root_domain = domain.gsub('www.', '')
+          root_domain = domain.gsub("www.", "")
 
           OrganicResult.new(
             position: index,
@@ -41,10 +43,10 @@ module GoogleParser
       end
 
       def extract_jsmodel
-        body_jsmodel = @doc.css('body').attr('jsmodel')&.value&.strip
+        body_jsmodel = @doc.css("body").attr("jsmodel")&.value&.strip
         raise "No jsmodel found in the body tag" unless body_jsmodel
 
-        body_jsmodel.split(' ')
+        body_jsmodel.split(" ")
       end
 
       def extract_domain(url)
@@ -54,8 +56,8 @@ module GoogleParser
       end
 
       def parse_google_url(full_google_uri)
-        href = full_google_uri.attr('href').value
-        if href.start_with?('/url?q=')
+        href = full_google_uri.attr("href").value
+        if href.start_with?("/url?q=")
           href.match(%r{/url\?q=(.*?)&})[1]
         else
           href

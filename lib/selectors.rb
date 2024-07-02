@@ -12,14 +12,6 @@ module GoogleParser
           description: "div.BNeawe.s3v9rd.AP7Wnd",
           breadcrumbs: "div.BNeawe.UPmit.AP7Wnd.lRVwie",
           url: "a[href]",
-        },
-        ads: {
-          container: "div.uEierd",
-          title: "h3 > div",
-          description: "div.BNeawe.s3v9rd.AP7Wnd",
-          breadcrumbs: "div.BNeawe.UPmit.AP7Wnd",
-          url: "a[href]",
-          ad_label: "span.uEierd",
         }
       }
     }

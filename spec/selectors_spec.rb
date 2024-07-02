@@ -7,7 +7,6 @@ RSpec.describe GoogleParser::Selectors do
     it "returns the correct selectors for a known jsmodel" do
       selectors = described_class.for("hspDDf")
       expect(selectors).to have_key(:organic_results)
-      expect(selectors).to have_key(:ads)
     end
 
     it "raises an error for an unknown jsmodel" do

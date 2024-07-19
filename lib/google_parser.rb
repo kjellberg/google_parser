@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "google_parser/version"
-require_relative "selectors"
+require_relative "google_parser/selectors"
 
 require "nokogiri"
 
@@ -9,6 +9,8 @@ module GoogleParser
   autoload :Parser, "google_parser/parser"
 
   module Elements
-    autoload :OrganicResult, "google_parser/elements/organic_result"
+    module OrganicResults
+      autoload :Base, "google_parser/elements/organic_results/base"
+    end
   end
 end

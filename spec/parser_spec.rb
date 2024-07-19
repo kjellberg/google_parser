@@ -15,7 +15,6 @@ RSpec.describe GoogleParser::Parser do
   describe "#organic_results" do
     it "extracts organic results" do
       expect(parser.organic_results).not_to be_empty
-      puts parser.organic_results.first.inspect
     end
 
     it "returns an array of Result objects" do

@@ -3,7 +3,7 @@
 require "spec_helper"
 
 RSpec.describe GoogleParser::Parser do
-  let(:html) { File.read("spec/fixtures/google_response_hspDDf.html") }
+  let(:html) { File.read("spec/fixtures/google_query-matkasse.html") }
   let(:parser) { described_class.new(html) }
 
   describe "#initialize" do
@@ -21,13 +21,13 @@ RSpec.describe GoogleParser::Parser do
       expect(parser.organic_results).to all(be_a(GoogleParser::Elements::OrganicResults::Base))
     end
 
-    # it "correctly extracts data from organic results" do
-    #   result = parser.organic_results.first
-    #   expect(result.title).not_to be_nil
-    #   expect(result.description).not_to be_nil
-    #   expect(result.url).not_to be_nil
-    #   expect(result.domain).not_to be_nil
-    #   expect(result.root_domain).not_to be_nil
-    # end
+    it "correctly extracts data from organic results" do
+      result = parser.organic_results.first
+      expect(result.title).to eq("Linas Matkasse: Nyttiga, goda & hälsosamma matkassar")
+      expect(result.description).to eq("Matglädje för hela familjen – med Linas Matkasse. ✓ Färska och lokala råvaror i säsong ✓ 80 sunda, goda recept i veckan ✓ Ingen bindningstid.")
+      expect(result.url).to eq("https://www.linasmatkasse.se/")
+      expect(result.domain).to eq("www.linasmatkasse.se")
+      expect(result.root_domain).to eq("linasmatkasse.se")
+    end
   end
 end

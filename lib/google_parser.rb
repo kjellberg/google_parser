@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "google_parser/version"
-require_relative "google_parser/selectors"
 
 require "nokogiri"
 

@@ -30,7 +30,7 @@ module GoogleParser
           domain = extract_domain(url)
           root_domain = domain.gsub("www.", "")
 
-          OrganicResult.new(
+          Elements::OrganicResult.new(
             position: index,
             title: result_element.css(@selectors.dig(:organic_results, :title)).text&.strip,
             description: result_element.css(@selectors.dig(:organic_results, :description)).text&.strip,

@@ -19,7 +19,7 @@ RSpec.describe GoogleParser::Parser do
     end
 
     it "returns an array of Result objects" do
-      expect(parser.organic_results).to all(be_a(GoogleParser::OrganicResult))
+      expect(parser.organic_results).to all(be_a(GoogleParser::Elements::OrganicResult))
     end
 
     it "correctly extracts data from organic results" do
